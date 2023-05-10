@@ -3,7 +3,7 @@ from Image_Process_Algorithm.DayNight1 import *
 
 
 # create a video capture object
-cap = cv2.VideoCapture('/home/quangminh/Desktop/83329007015806879(1).mp4')
+cap = cv2.VideoCapture(0)
 time_now = timer()
     #Time sang toi
 morning_5h = time_now.replace(hour=5, minute=0, second=0, microsecond=0)
@@ -22,7 +22,7 @@ while True:
                     
             if((time_now>morning_5h and time_now<night_18h)):
                 
-                if(a<0):
+                if(a<60):
                     # define the minimum brightness difference
                     BRIGHTNESS_THRESHOLD = 40
 
