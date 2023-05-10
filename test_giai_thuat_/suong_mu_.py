@@ -1,11 +1,13 @@
 from Init_.until import *
 
-cap = cv2.VideoCapture('/home/quangminh/Desktop/8963058681407290323.mp4')
-contrast_threshold=0.05
+cap = cv2.VideoCapture(2)
+contrast_threshold=0.8
 while True:
     
     # read the current frame
     ret, frame = cap.read()
+    #x1, y1, x2, y2 = 30,20,200,200
+    #roi = frame[y1:y2, x1:x2] 
     cv2.imshow('video',frame)
     # Đọc ảnh và chuyển sang ảnh grayscale
    
@@ -21,4 +23,7 @@ while True:
         print("suong mu")
     else:
         print("khong co suong mu")
+    if cv2.waitKey(1) >= 0:
+        break
+        
     
